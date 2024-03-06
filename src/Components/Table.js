@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Table } from "antd";
-
+import fetchData from "../utils/fetchData";
 function DataTable() {
+  useEffect(() => {
+    fetchData();
+  }, []);
   const dataSource = [
     {
       key: "1",
