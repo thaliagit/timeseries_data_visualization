@@ -36,7 +36,7 @@ function DataTable() {
 
   return (
     <>
-      <Table dataSource={data} columns={columns} />;
+      <Table rowKey={(data) => data.id} dataSource={data} columns={columns} />;
     </>
   );
 }
