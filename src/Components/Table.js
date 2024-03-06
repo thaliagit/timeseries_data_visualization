@@ -1,22 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Table } from "antd";
-
+import { fetchData } from "../utils/fetchData";
 function DataTable() {
-  const dataSource = [
-    {
-      key: "1",
-      ENTSOE_DE_DAM_Price: "39.73",
-      ENTSOE_GR_DAM_Price: "89",
-      ENTSOE_FR_DAM_Price: "44.31",
-      DateTime: "2024-02-01T00:00:00",
-    },
-    {
-      key: "2",
-      name: "John",
-      age: 42,
-      address: "10 Downing Street",
-    },
-  ];
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    async function fetchDataAndSetData() {
+      const fetchedData = await fetchData();
+      setData(fetchedData);
+    }
+    fetchDataAndSetData();
+  }, []);
 
   const columns = [
     {
@@ -43,7 +36,7 @@ function DataTable() {
 
   return (
     <>
-      <Table dataSource={dataSource} columns={columns} />;
+      <Table rowKey={(data) => data.id} dataSource={data} columns={columns} />;
     </>
   );
 }
