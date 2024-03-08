@@ -1,13 +1,18 @@
 import "./App.css";
+import Navbar from "./Components/Navbar";
+import DataTable from "./Components/DataTable";
+import { Routes, Route } from "react-router";
 import LineChart from "./Components/LineChart";
-import DataTable from "./Components/Table";
 
 function App() {
   return (
-    <div className="App">
-      <DataTable />
-      <LineChart />
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<DataTable />} />
+        <Route path="/lineChart" element={<LineChart />} />
+      </Routes>
+    </>
   );
 }
 

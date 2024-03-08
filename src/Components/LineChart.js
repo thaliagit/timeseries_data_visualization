@@ -1,32 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { Line } from "@ant-design/plots";
 import { fetchData } from "../utils/fetchData";
+import ChartNavigation from "./ChartNavigation";
 const LineChart = () => {
   const [data, setData] = useState([]);
-
+  const [yAxisField, setyAxisField] = useState("ENTSOE_DE_DAM_Price");
   useEffect(() => {
     asyncFetch();
   }, []);
 
   const asyncFetch = async () => {
-    // fetch(
-    //   "https://gw.alipayobjects.com/os/bmw-prod/e00d52f4-2fa6-47ee-a0d7-105dd95bde20.json"
-    // )
-    //   .then((response) => response.json())
-    //   .then((json) => setData(json))
-    //   .catch((error) => {
-    //     console.log("fetch data failed", error);
-    //   });
-
     const response = await fetchData();
     setData(response);
-    console.log("THIS IS FETCHING IN THE LINE CHART");
   };
 
   const config = {
     data,
     xField: "DateTime",
-    yField: "ENTSOE_DE_DAM_Price",
+    yField: yAxisField,
     seriesField: "name",
     yAxis: {
       label: {
@@ -37,7 +28,6 @@ const LineChart = () => {
       position: "top",
     },
     smooth: true,
-    // @TODO 后续会换一种动画方式
     animation: {
       appear: {
         animation: "path-in",
@@ -45,7 +35,14 @@ const LineChart = () => {
       },
     },
   };
-
-  return <Line {...config} />;
+  const handleChartCategories = (data) => {
+    setyAxisField(data);
+  };
+  return (
+    <>
+      <Line {...config} />
+      <ChartNavigation yAxisField={handleChartCategories} />
+    </>
+  );
 };
 export default LineChart;
