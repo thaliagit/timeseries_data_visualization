@@ -1,11 +1,16 @@
 import "./App.css";
-import DataTable from "./Components/Table";
+import Navbar from "./Components/Navbar";
+import DataTable from "./Components/DataTable";
+import { Routes, Route } from "react-router";
 
 function App() {
   return (
-    <div className="App">
-      <DataTable />
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<DataTable />} />
+      </Routes>
+    </>
   );
 }
 
