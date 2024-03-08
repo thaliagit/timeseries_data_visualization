@@ -12,9 +12,8 @@ const items = [
   },
 ];
 const Navbar = () => {
-  const [current, setCurrent] = useState("mail");
+  const [current, setCurrent] = useState("table");
   const onClick = (e) => {
-    console.log("click ", e);
     setCurrent(e.key);
   };
   return (
