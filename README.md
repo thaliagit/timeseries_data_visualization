@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# timeseries_data_visualization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to this project!
+In order to create this application I have used the following libraries and dependencies: AntDesign, axios, json-server, react-router and react-dom.
 
-## Available Scripts
+📌 Installation guide:
 
-In the project directory, you can run:
+1. Clone the Repository using the command:
+   **git clone https://github.com/thaliagit/timeseries_data_visualization.git**
+2. To navigate through the directory use the command below:
+   **cd timeseries_data_visualization**
+3. In order to have the required dependencies installed please type the command below after making sure you are in the first-level directory:
+   **npm install**
+   (This will ensure you have installed all the dependencies you need in order to start the app. Tip: you can check if something is missing in your package.json file)
 
-### `npm start`
+🌟 Starting the application:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. For this project I mocked the database using the json-server library in order to represent a more realistic data retrieving experience. Before starting the application it is essential to start the server by using the following command:
+   **npx json-server --watch db.json --port 3001**
+   (IMPORTANT: use only the port 3001 as it is set otherwise the get request will fail)
+2. In order to start the app use the command below on the repository you have cloned in your local:
+   **npm start**
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This will automatically start the application by opening a new window on the browser.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Happy Navigating! 💻😃
